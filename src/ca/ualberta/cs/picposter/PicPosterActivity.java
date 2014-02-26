@@ -73,10 +73,12 @@ public class PicPosterActivity extends Activity {
 	}
 
 
-	public void searchPosts(View view) {
+	public void searchPosts(View view) throws Exception {
 		String searchTerm = this.searchPostsEditText.getText().toString();
 		
 		//TODO : perform search, update model, etc
+		
+		ElasticSearchOperations.searchPicPostModel(searchTerm);
 		
 		this.searchPostsEditText.setText(null);
 		this.searchPostsEditText.setHint(R.string.search_posts_edit_text_hint);
